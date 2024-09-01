@@ -7,14 +7,12 @@
 <main class="container mt-4">
     <h1>{{ produto.nome }}</h1>
     
-    <!-- Imagem do Produto -->
     {% if produto.imagem %}
         <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="img-fluid mb-3">
     {% else %}
         <p>Imagem não disponível.</p>
     {% endif %}
 
-    <!-- Detalhes do Produto -->
     <div class="row">
         <div class="col-md-6">
             <h4>Descrição</h4>
@@ -39,7 +37,6 @@
         </div>
     </div>
 
-    <!-- Botão de Voltar -->
     <a href="{% url 'home' %}" class="btn btn-primary mt-3">Voltar para a lista</a>
 </main>
 {% endblock %}
