@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+header{
+    background-color: #e3f2fd;;
+}
+
+nav-item{
+   color: #0d6efd !important;
+}
+article{
+    padding: 50px !important;
+}
+.card-img-top {
+    height: 225px;
+    width: 100%;
+    object-fit: cover;
+}
+h1{
+    font-size: 10px!important;
+}

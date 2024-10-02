@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Detalhes do Produto{% endblock %}
+
+{% block content %}
+<main class="container mt-4">
+    <h1>{{ produto.nome }}</h1>
+    
+    {% if produto.imagem %}
+    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="img-fluid mb-3" style="width: 40vh; height: auto;">
+    {% else %}
+        <p>Imagem não disponível.</p>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Descrição</h4>
+            <p>{{ produto.descricao }}</p>
+
+            <h4>Preço de Compra</h4>
+            <p>R$ {{ produto.preco_compra|floatformat:2 }}</p>
+
+            <h4>Preço de Venda</h4>
+            <p>R$ {{ produto.preco_venda|floatformat:2 }}</p>
+        </div>
+
+        <div class="col-md-6">
+            <h4>Quantidade em Estoque</h4>
+            <p>{{ produto.quantidade_estoque }}</p>
+
+            <h4>Tamanho</h4>
+            <p>{{ produto.tamanho }}</p>
+
+            <h4>Cor</h4>
+            <p>{{ produto.cor }}</p>
+        </div>
+    </div>
+
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3">Voltar para a lista</a>
+</main>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Cadastro Roupa{% endblock %}
+{% block content %}
+<main>
+    {% csrf_token %}
+
+            <article>
+                <h1>Dados do Produto</h1>
+       
+               
+                    <form method="post"  class="formProduto" enctype="multipart/form-data" action="{% url 'cadastrar_produto' %}" >
+                        {% csrf_token %}
+        
+                        <div class="row">
+                            <div class="col">
+                                <label for="nome">Nome*:</label>
+                                <input type="text" id="nome" name="nome" class="form-control" required />
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col">
+                                <label for="descricao">Descrição:</label>
+                                <textarea id="descricao" name="descricao" class="form-control"></textarea>
+                            </div>
+                        </div>
+        
+        
+                        <div class="row">
+                            <div class="col">
+                                <label for="preco_compra">Preço de Compra*:</label>
+                                <input type="number" id="preco_compra" name="preco_compra" step="0.01" class="form-control" required />
+                            </div>
+                            <div class="col">
+                                <label for="preco_venda">Preço de Venda*:</label>
+                                <input type="number" id="preco_venda" name="preco_venda" step="0.01" class="form-control" required />
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col">
+                                <label for="quantidade_estoque">Quantidade em Estoque*:</label>
+                                <input type="number" id="quantidade_estoque" name="quantidade_estoque" class="form-control" required />
+                            </div>
+                            <div class="col">
+                                <label for="tamanho">Tamanho:</label>
+                                <input type="text" id="tamanho" name="tamanho" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label for="cor">Cor:</label>
+                                <input type="text" id="cor" name="cor" class="form-control" />
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col">
+                                <label for="imagem">Imagem:</label>
+                                <input type="file" id="imagem" name="imagem" class="form-control" />
+                            </div>
+                        </div>
+        
+                        <p>*Campo Obrigatório</p>
+                    
+                        <button type="submit" class="btn btn-primary">Adicionar Produto</button>
+                    </form>
+            </article>
+            
+ 
+
+</main>
+
+{% endblock %}

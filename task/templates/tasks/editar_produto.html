@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Editar Roupa{% endblock %}
+{% block content %}
+<main>
+    <article>
+        <h1>Editar Produto</h1>
+
+        <form method="post" class="formProduto" enctype="multipart/form-data" action="{% url 'editar_produto' produto.id %}">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="col">
+                    <label for="nome">Nome*:</label>
+                    <input type="text" id="nome" name="nome" class="form-control" value="{{ produto.nome }}" required />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" class="form-control">{{ produto.descricao }}</textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="preco_compra">Preço de Compra*:</label>
+                    <input type="number" id="preco_compra" name="preco_compra" step="0.01" class="form-control" value="{{ produto.preco_compra }}" required />
+                </div>
+                <div class="col">
+                    <label for="preco_venda">Preço de Venda*:</label>
+                    <input type="number" id="preco_venda" name="preco_venda" step="0.01" class="form-control" value="{{ produto.preco_venda }}" required />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="quantidade_estoque">Quantidade em Estoque*:</label>
+                    <input type="number" id="quantidade_estoque" name="quantidade_estoque" class="form-control" value="{{ produto.quantidade_estoque }}" required />
+                </div>
+                <div class="col">
+                    <label for="tamanho">Tamanho:</label>
+                    <input type="text" id="tamanho" name="tamanho" class="form-control" value="{{ produto.tamanho }}" />
+                </div>
+                <div class="col">
+                    <label for="cor">Cor:</label>
+                    <input type="text" id="cor" name="cor" class="form-control" value="{{ produto.cor }}" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="imagem">Imagem:</label>
+                    <input type="file" id="imagem" name="imagem" class="form-control" />
+                    <small>Deixe vazio se não quiser alterar a imagem.</small>
+                </div>
+            </div>
+
+            <p>*Campo Obrigatório</p>
+
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+           
+                </form> 
+                <br>
+                <a href="{% url 'home' %}" class="btn btn-primary mt-3">Voltar para a lista</a>
+
+
+    </article>
+</main>
+{% endblock %}
