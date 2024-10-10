@@ -24,7 +24,6 @@ def editar_produto(request,pk):
 
         try:
             produto.save()
-            messages.success(request, 'Produto atualizado com sucesso!')
             return redirect('home') 
         except Exception as e:
             messages.error(request, f"Ocorreu um erro ao salvar o produto: {e}")

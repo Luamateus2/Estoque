@@ -39,7 +39,6 @@ def cadastrar_produto(request):
             imagem=imagem
         )
         produto.save()
-        messages.success(request, 'Produto adicionado com sucesso!')
         return render(request,'tasks/cadastrar_roupa.html')
 
     return render(request, 'tasks/cadastrar_roupa.html')

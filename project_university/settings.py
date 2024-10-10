@@ -52,7 +52,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'project_university.urls'
-#ROTA DE LOGOUT E ROTA PARA LOGIN
 LOGOUT_REDIRECT_URL = '/login'
 LOGIN_URL = '/erro/'  
 
@@ -85,7 +84,7 @@ DATABASES = {
         'NAME': 'estoque',
         'USER':'usuario',
         'PASSWORD':'123456',
-        'HOST':'localhost',
+        'HOST':'db',
         'PORT':'5432',
     }
 }
