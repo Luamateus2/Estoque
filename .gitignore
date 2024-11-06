@@ -1,2 +1,10 @@
 env/
 db.json
+db.sqlite
+__pycache__/
+*.pyc
+*.pyo
+
+.env
+venv/
+.docker/
